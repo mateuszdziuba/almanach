@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Spell {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  school      String
+  level       String    // Can be "Air 5" and "Drd 5"
+  components  String    // Can be "V" and "S"
+  castingTime String
+  range       String
+  area        String?
+  effect      String?      // Can be "40 ft./level radius cylinder 40 ft. high"
+  target      String?
+  duration    String
+  savingThrow String?
+  spellResist String?
+  shortDescription  String
+  longDescription   String
+}
