@@ -1,8 +1,8 @@
 import type { ExpoConfig } from "@expo/config";
 
 const defineConfig = (): ExpoConfig => ({
-  name: "expo",
-  slug: "expo",
+  name: "Almanach",
+  slug: "almanach",
   scheme: "expo",
   version: "1.0.0",
   orientation: "portrait",
@@ -11,7 +11,7 @@ const defineConfig = (): ExpoConfig => ({
   splash: {
     image: "./assets/icon.png",
     resizeMode: "contain",
-    backgroundColor: "#1F104A",
+    backgroundColor: "#2D1689",
   },
   updates: {
     fallbackToCacheTimeout: 0,
@@ -19,17 +19,18 @@ const defineConfig = (): ExpoConfig => ({
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "your.bundle.identifier",
   },
   android: {
+    package: "com.mdzik.almanach",
+    versionCode: 1,
     adaptiveIcon: {
       foregroundImage: "./assets/icon.png",
-      backgroundColor: "#1F104A",
+      backgroundColor: "#2D1689",
     },
   },
   extra: {
     eas: {
-      projectId: "your-project-id",
+      projectId: "2a8a172b-9c23-4442-8f8b-2892686189a4",
     },
   },
   plugins: ["./expo-plugins/with-modify-gradle.js"],

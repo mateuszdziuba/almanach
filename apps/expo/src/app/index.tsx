@@ -43,6 +43,7 @@ const SpellCard: React.FC<{
 
 type Level = keyof typeof druidTable;
 type Mod = keyof typeof modTable;
+type SpellLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 
 const Index = () => {
   // const utils = api.useContext();
@@ -92,8 +93,9 @@ const Index = () => {
     .fill(null)
     .map((_, index) => {
       const spellLevel = index.toString();
-      const spellValue = druidTable[level][index]
-        ? druidTable[level][index] + modTable[modifier][index]
+      const spellValue = druidTable[level][index as SpellLevel]
+        ? druidTable[level][index as SpellLevel] +
+          modTable[modifier][index as SpellLevel]
         : 0;
 
       return [spellLevel, spellValue.toString()];
